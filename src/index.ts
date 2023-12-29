@@ -3,26 +3,28 @@ import cors from "cors";
 import compression from "compression";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
-import mongoose, { Error } from "mongoose";
 import router from "./router";
 import "dotenv/config"
+import connectToMongoDB from "./connect";
+import helmet from "helmet";
+// @ts-ignore
+import xss from "xss-clean";
+import STATUS_CODES from "http-status-codes";
 
 const app = express();
-const MONGO_URL = process.env.MONGO_URL;
+connectToMongoDB();
 const PORT = process.env.PORT || 8080;
 app.use(cors({credentials:true}));
+app.use(helmet());
+app.use(xss());
 app.use(compression());
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use('/', router());
 
 app.get('/', (req,res)=>{
-    res.send(`Welcome to Animu Cal 🍕`);
+    res.status(STATUS_CODES.OK).send(`Welcome to Animu Cal 🍕`);
 });
 
 app.listen(8000,()=>{console.log(`Listening on PORT ${PORT}`);
 });
-mongoose.connect(MONGO_URL);
-mongoose.connection.on('error',(error : Error) =>{
-    console.log(error);
-})

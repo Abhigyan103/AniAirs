@@ -1,19 +1,48 @@
 import mongoose from "mongoose";
+import bcrypt from 'bcrypt';
+import jsonwebtoken from "jsonwebtoken";
+import "dotenv/config";
 
-const UserSchema = new mongoose.Schema({
-  username: { type: String, required: true },
-  email: { type: String, required: true },
-  authentication: {
-    password: { type: String, required: true, select: false },
-    salt: { type: String, select: false },
-    sessionToken: { type: String, select: false },
+export const UserSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: [true, 'Please provide username'],
+    maxlength: 50,
+    minlength: 3,
   },
-});
+  email: {
+    type: String,
+    required: [true, 'Please provide email'],
+    match: [
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      'Please provide a valid email',
+    ],
+    unique: true,
+  },
+  authentication: {
+    password: {
+      type: String,
+      required: [true, 'Please provide password'],
+      minlength: [6, 'Password length should be greater than 6'],
+      select:false
+    }
+  },
+},{timestamps:true});
 
-export const UserModel = mongoose.model("User", UserSchema);
+
+UserSchema.pre('save', async function (next) {
+  if (!this.isModified('authentication.password')) return;
+  const salt = await bcrypt.genSalt(10);
+  this.authentication.password = await bcrypt.hash(this.authentication.password, salt);
+  next();
+});
+export const UserModel = mongoose.model("users", UserSchema);
+
 export const getUsers = () => UserModel.find();
 export const getUserByEmail = (email: String) =>
   UserModel.findOne({ email :email });
+export const getUserByUsername = (username: String) =>
+  UserModel.findOne({ username :username });
 export const getUserBySessionToken = (sessionToken: string) =>
   UserModel.findOne({ "authentication.sessionToken": sessionToken });
 export const getUserById = (id: String) => UserModel.findById(id);
