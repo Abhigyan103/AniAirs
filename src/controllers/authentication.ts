@@ -13,7 +13,7 @@ export const login = async (req: express.Request, res: express.Response) => {
     if (!user) {
       return res.status(StatusCodes.UNAUTHORIZED).send("User doesn't exist");
     }
-    const isPasswordCorrect = await comparePassword(user.authentication.password,password);
+    const isPasswordCorrect = await comparePassword(password,user.authentication.password);
     if (!isPasswordCorrect) {
       return res.status(StatusCodes.UNAUTHORIZED).send('Invalid Password');
     }

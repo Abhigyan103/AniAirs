@@ -4,14 +4,14 @@ import bcrypt from "bcrypt";
 
 export const createJWT = (user :any) =>{
   return jsonwebtoken.sign(
-    { userId: user._id, email: user.email },
+    { _id: user._id, email: user.email,username:user.username },
     process.env.JWT_SECRET,
     {
       expiresIn: process.env.JWT_LIFETIME,
     }
   );
 };
-export const comparePassword = async function (userPassword:string, canditatePassword : string) {
+export const comparePassword = async (canditatePassword : string,userPassword:string ) =>{
   const isMatch = await bcrypt.compare(canditatePassword, userPassword);
   return isMatch;
 };

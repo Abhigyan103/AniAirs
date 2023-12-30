@@ -43,8 +43,6 @@ export const getUserByEmail = (email: String) =>
   UserModel.findOne({ email :email });
 export const getUserByUsername = (username: String) =>
   UserModel.findOne({ username :username });
-export const getUserBySessionToken = (sessionToken: string) =>
-  UserModel.findOne({ "authentication.sessionToken": sessionToken });
 export const getUserById = (id: String) => UserModel.findById(id);
 export const createUser = (values: Record<string, any>) =>
   new UserModel(values).save().then((user) => user.toObject());
