@@ -13,7 +13,7 @@ The main purpose of this app is to serve Anime details and authentication featur
 	- [Debugging](#Using-the-debugger-in-VS-Code)
 	- [Testing](#testing)
 - [VS Code Extensions](#VSCode-Extensions)
-- [JWOC Contribution](#VSCode-xtensions)
+- [JWOC Contribution](#contributions)
 
 # Pre-requisites
 To build and run this app locally you will need a few things:
@@ -240,7 +240,7 @@ Note this will also generate a coverage report.
 Writing tests for web apps has entire books dedicated to it and best practices are strongly influenced by personal style, so I'm deliberately avoiding discussing how or when to write tests in this guide.
 However, if prescriptive guidance on testing is something that you're interested in, [let me know](https://www.surveymonkey.com/r/LN2CV82), I'll do some homework and get back to you.
 
-## VSCode Extensions
+# VSCode Extensions
 
 To enhance your development experience while working in VSCode we also provide you a list of the suggested extensions for working with this project:
 
@@ -251,13 +251,11 @@ To enhance your development experience while working in VSCode we also provide y
 
 To contribute to this project:
 1. [Pre-requisites](#pre-requisites)
-2. [Get Started](#getting-started)
-3. [Set up `.env` file](#)
+2. [Set up `.env` file](#)
     * Remove the `.example` from your `.env.example` file
     * Run the following code in your terminal
     ```sh
-    $ node
-    $ require('crypto').randomBytes(64).toString('hex')
+    node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
     ```
     Copy the output and paste it to your `.env` file to the `JWT_SECRET` variable and do the same for the `JWT_REFRESH_SECRET` .
     * Set a lifetime for your token expiration ex '7d' or '1h'.
@@ -271,6 +269,7 @@ To contribute to this project:
     JWT_REFRESH_SECRET='268f5fbaa8569156bb9f3ba9c67ea964af8a38d05887557e49155d003e5cbdc92dae07629f3f4ad1667d1316399f4be4baaf91278ff5e0bd28afd7ef1419a564'
     JWT_LIFETIME='3h'
     ```
+3. [Get Started](#getting-started)
 4. You're done!
 
 ## License
