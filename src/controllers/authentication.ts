@@ -1,6 +1,6 @@
 import express from "express";
 import { createUser, getUserByEmail, getUserByUsername } from "../db/users";
-import { comparePassword, createJWT } from "../helpers";
+import { comparePassword, createJWT, createRefreshJWT, verifyRefreshToken } from "../helpers";
 import { StatusCodes } from "http-status-codes";
 
 export const login = async (req: express.Request, res: express.Response) => {
@@ -18,12 +18,14 @@ export const login = async (req: express.Request, res: express.Response) => {
       return res.status(StatusCodes.UNAUTHORIZED).send('Invalid Password');
     }
 
-    const token = createJWT(user);
+    const accessToken = createJWT(user);
+    const refreshToken = createRefreshJWT(user);
     res.status(StatusCodes.OK).json({
       user: {
         email: user.email,
         username: user.username,
-        token,
+        accessToken,
+        refreshToken
       },
     }).end();
   } catch (error) {
@@ -31,6 +33,30 @@ export const login = async (req: express.Request, res: express.Response) => {
     return res.sendStatus(400);
   }
 };
+
+export const token = async (req: express.Request, res: express.Response) => {
+  try {
+    const {refreshToken} = req.body;
+    if(refreshToken == null) {
+      return res.status(StatusCodes.UNAUTHORIZED).send('Invalid refresh token');
+    }
+    const user = verifyRefreshToken(refreshToken);
+    const accessToken = createJWT(user);
+    if(accessToken == null) {
+      return res.status(StatusCodes.UNAUTHORIZED).send('Invalid refresh token');
+    }
+    return res.status(StatusCodes.CREATED).send({
+      user: {
+        email: (user as any).email,
+        username: (user as any).username,
+        accessToken,
+        refreshToken
+      },
+    });
+  } catch (error) {
+
+  }
+}
 
 export const register = async (req: express.Request, res: express.Response) => {
   try {
