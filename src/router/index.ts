@@ -1,7 +1,7 @@
 import express, {Router} from 'express';
 import authentication from './authentication';
 import users from './users';
-import anime from './anime';
+import anime from './api/top';
 import { StatusCodes } from 'http-status-codes';
 
 const router = Router();
