@@ -9,17 +9,12 @@ import 'widgets/card_genre.dart';
 import 'widgets/card_gradient.dart';
 import 'widgets/card_image.dart';
 import 'widgets/card_rating.dart';
-import 'widgets/card_summary.dart';
 import 'widgets/card_time.dart';
 import 'widgets/card_title.dart';
 
 class MyCard extends ConsumerWidget {
   const MyCard({super.key, required this.anime});
   final Anime anime;
-  // final bool isAiring;
-  // final String? title, summary, time, rating;
-  // final List<String>? genres;
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
@@ -70,7 +65,7 @@ class MyCard extends ConsumerWidget {
                         time: anime.aired!,
                         isAiring: anime.airing,
                       )
-                    : SizedBox(),
+                    : const SizedBox(),
                 const SizedBox(height: 8),
                 CardGenre(genres: anime.genres.map((p0) => p0.name).toList())
               ],
