@@ -8,12 +8,12 @@ export const login = async (req: express.Request, res: express.Response) => {
     const { email, password } = req.body;
     if (!email || !password) return res.sendStatus(StatusCodes.UNAUTHORIZED);
     const user = await getUserByEmail(email).select(
-      "+authentication.password"
+      "+password"
     );
     if (!user) {
       return res.status(StatusCodes.UNAUTHORIZED).send("User doesn't exist");
     }
-    const isPasswordCorrect = await comparePassword(password,user.authentication.password);
+    const isPasswordCorrect = await comparePassword(password,user.password);
     if (!isPasswordCorrect) {
       return res.status(StatusCodes.UNAUTHORIZED).send('Invalid Password');
     }

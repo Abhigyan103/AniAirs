@@ -18,21 +18,19 @@ export const UserSchema = new mongoose.Schema({
     ],
     unique: true,
   },
-  authentication: {
-    password: {
-      type: String,
-      required: [true, 'Please provide password'],
-      minlength: [6, 'Password length should be greater than 6'],
-      select:false
-    }
-  },
+  password: {
+    type: String,
+    required: [true, 'Please provide password'],
+    minlength: [6, 'Password length should be greater than 6'],
+    select:false
+  }
 },{timestamps:true});
 
 
 UserSchema.pre('save', async function (next) {
   if (!this.isModified('authentication.password')) return;
   const salt = await bcrypt.genSalt(10);
-  this.authentication.password = await bcrypt.hash(this.authentication.password, salt);
+  this.password = await bcrypt.hash(this.password, salt);
   next();
 });
 export const UserModel = mongoose.model("users", UserSchema);

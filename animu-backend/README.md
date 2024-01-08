@@ -29,11 +29,11 @@ git clone --depth=1 https://github.com/Abhigyan103/animu-backend.git
 - Install dependencies
 ```
 cd animu_backend
-npm i
+yarn
 ```
 - Run the project
 ```
-npm run dev
+yarn dev
 ```
 
 > **Note on editors!** - TypeScript has great support in [every editor](http://www.typescriptlang.org/index.html#download-links), but this project has been pre-configured for use with [VS Code](https://code.visualstudio.com/).
@@ -48,12 +48,12 @@ The `test` and `views` folders remain top level as expected.
 
 The full folder structure of this app is explained below:
 
-> **Note!** Make sure you have already built the app using `npm run build`
+> **Note!** Make sure you have already built the app using `yarn build`
 
 | Name | Description |
 | ------------------------ | ---------------------------------------------------------------------------------------------- |
 | **dist**                 | Contains the distributable (or output) from your TypeScript build. This is the code you ship   |
-| **node_modules**         | Contains all your npm dependencies                                                             |
+| **node_modules**         | Contains all your node dependencies                                                             |
 | **src**                  | Contains your source code that will be compiled to the dist dir                                |
 | **src/controllers**      | Controllers define functions that respond to various http requests                             |
 | **src/db**               | Models define Mongoose schemas that will be used in storing and retrieving data from MongoDB   |
@@ -72,13 +72,13 @@ The full folder structure of this app is explained below:
 # Type Definition `dts` Files
 For the most part, you'll find `.d.ts` files for the libraries you are using on DefinitelyTyped.
 These `.d.ts` files can be easily installed into your project by using the npm scope `@types`.
-For example, if we want the `.d.ts` file for jQuery, we can do so with `npm install --save-dev @types/jquery`.
+For example, if we want the `.d.ts` file for jQuery, we can do so with `yarn add -D @types/jquery`.
 
 > **Note!** Because we're using `"noImplicitAny": true`, we are required to have a `.d.ts` file for **every** library we use. While you could set `noImplicitAny` to `false` to silence errors about missing `.d.ts` files, it is a best practice to have a `.d.ts` file for every library. (Even if the `.d.ts` file is [basically empty!](#writing-a-dts-file))
 
-> **Note!** Be sure to add `--save-dev` (or `-D`) to your `npm install`. `.d.ts` files are project dependencies, but only used at compile time and thus should be dev dependencies.
+> **Note!** Be sure to add `--save-dev` (or `-D`) to your `yarn add`. `.d.ts` files are project dependencies, but only used at compile time and thus should be dev dependencies.
 
-In this template, all the `.d.ts` files have already been added to `devDependencies` in `package.json`, so you will get everything you need after running your first `npm install`.
+In this template, all the `.d.ts` files have already been added to `devDependencies` in `package.json`, so you will get everything you need after running your first `yarn`.
 Once `.d.ts` files have been installed using npm, you should see them in your `node_modules/@types` folder.
 The compiler will always look in this folder for `.d.ts` files when resolving JavaScript libraries.
 
@@ -135,7 +135,7 @@ This project comes pre-configured with everything you need to get started.
 When you hit `F5` in VS Code, it looks for a top level `.vscode` folder with a `launch.json` file.
 
 You can debug in the following ways:
-* **Launch Program** - transpile typescript to javascript via npm build, then launch the app with the debugger attached on startup
+* **Launch Program** - transpile typescript to javascript via `yarn build`, then launch the app with the debugger attached on startup
 * **Attach by Process ID** - run the project in debug mode. This is mostly identical to the "Node.js: Attach by Process ID" template with one minor change.
 We added `"protocol": "inspector"` which tells VS Code that we're using the latest version of Node which uses a new debug protocol.
 * **Jest Current File** - have a Jest test file open and active in VSCode, then debug this specific file by setting break point. All tests are not run.
@@ -202,7 +202,7 @@ While Mocha is probably more common, Mocha seems to be looking for a new maintai
 ### Install the components
 To add TypeScript + Jest support, first install a few npm packages:
 ```
-npm install -D jest ts-jest
+yarn add -D jest ts-jest
 ```
 `jest` is the testing framework itself, and `ts-jest` is just a simple function to make running TypeScript tests a little easier.
 
@@ -233,7 +233,7 @@ This preprocess step is very flexible, but in our case, we just want to compile 
 This all happens in memory when you run the tests, so there are no output `.js` test files for you to manage.
 
 ### Running tests
-Simply run `npm run test`.
+Simply run `yarn test`.
 Note this will also generate a coverage report.
 
 ### Writing tests

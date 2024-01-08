@@ -8,10 +8,11 @@ import "dotenv/config"
 import connectToMongoDB from "./connect";
 import helmet from "helmet";
 import STATUS_CODES from "http-status-codes";
+import { env } from "./helpers/env";
 
 const app = express();
 connectToMongoDB();
-const PORT = process.env.PORT || 8080;
+const PORT = env.PORT || 8080;
 app.use(cors({credentials:true}));
 app.use(helmet());
 app.use(compression());
