@@ -1,4 +1,4 @@
-import 'package:animu_cal/src/core/utils/card/widgets/card_mini_box.dart';
+import 'package:aniairs_cal/src/core/utils/card/widgets/card_mini_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

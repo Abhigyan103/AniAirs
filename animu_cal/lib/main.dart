@@ -1,5 +1,5 @@
-import 'package:animu_cal/src/features/top_rated.dart/top_rated.dart';
-import 'package:animu_cal/theme.dart';
+import 'package:aniairs_cal/src/features/top_rated.dart/top_rated.dart';
+import 'package:aniairs_cal/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

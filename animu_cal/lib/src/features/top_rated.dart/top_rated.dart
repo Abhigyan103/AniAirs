@@ -1,6 +1,6 @@
-import 'package:animu_cal/src/core/utils/app_bar.dart';
-import 'package:animu_cal/src/features/top_rated.dart/controllers/top_rated_controller.dart';
-import 'package:animu_cal/theme.dart';
+import 'package:aniairs_cal/src/core/utils/app_bar.dart';
+import 'package:aniairs_cal/src/features/top_rated.dart/controllers/top_rated_controller.dart';
+import 'package:aniairs_cal/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
