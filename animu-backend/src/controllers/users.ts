@@ -12,7 +12,7 @@ type User = {
     createdAt: NativeDate,
     updatedAt: NativeDate,
     __v: number
-  }
+}
 
 export const getAllUsers = async (req: express.Request, res: express.Response) =>{
     try {

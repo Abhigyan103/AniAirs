@@ -1,5 +1,5 @@
 import {z} from "zod";
-
+import "dotenv/config"
 const envSchema = z.object({
     PORT :z.string().min(1),
     MONGO_URL :z.string(),

@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import bcrypt from 'bcrypt';
-import "dotenv/config";
 
 export const UserSchema = new mongoose.Schema({
   username: {
