@@ -1,11 +1,16 @@
 import app from '../../../src/app';
 import supertest from 'supertest';
 
-// describe('login', () => {
-//   const endpoint = '/dummy/test';
-//   const request = supertest(app);
+const exampleUser = {
+    "password" : "hellobye",
+    "email" : "emailhaimera@gmail.com"
+}
 
-//   it('should login using email: emailhaimera@gmail.com and pass: hellobye',async ()=>{
-//     const res = await request.get('/auth/login');
-//   });
-// });
+describe('login', () => {
+  const request = supertest(app);
+
+  it('should login using example user',async ()=>{
+    const res = await request.post('/auth/login').send(exampleUser);
+    expect(res.statusCode).toBe(200);
+  });
+});

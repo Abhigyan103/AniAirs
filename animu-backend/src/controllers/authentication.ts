@@ -61,6 +61,8 @@ export const token = async (req: express.Request, res: express.Response) => {
 export const register = async (req: express.Request, res: express.Response) => {
   try {
     const { email, password, username } = req.body;
+    console.log(req.body);
+    
     if (!email || !password || !username) return res.sendStatus(400);
     if (await getUserByEmail(email)) {
       return res.status(403).send('Email already exists');
@@ -68,7 +70,7 @@ export const register = async (req: express.Request, res: express.Response) => {
     if (await getUserByUsername(username)) {
       return res.status(403).send('Username already exists');
     }
-    const user = await createUser({ email,username, authentication:{password} });
+    const user = await createUser({ email,username, password });
     const token = createJWT(user);
     res.status(StatusCodes.CREATED).json({
       user: {
