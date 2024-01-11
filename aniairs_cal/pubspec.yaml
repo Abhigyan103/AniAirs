@@ -1,0 +1,47 @@
+name: aniairs_cal
+description: An app for anime reminders,recomendations, etc.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+# `flutter pub upgrade --major-versions`
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cached_network_image: ^3.3.0
+  cupertino_icons: ^1.0.2
+  flutter_riverpod: ^2.4.8
+  jikan_api: ^2.1.0
+  riverpod_annotation: ^2.3.1
+  neon_widgets: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  riverpod_generator: ^2.3.6
+  build_runner: ^2.4.6
+  custom_lint: ^0.5.6
+  riverpod_lint: ^2.3.4
+
+# The following section is specific to Flutter packages.
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+  fonts:
+    - family: League Spartan
+      fonts:
+        - asset: assets/fonts/LeagueSpartan/LeagueSpartan-Regular.ttf
+        - asset: assets/fonts/LeagueSpartan/LeagueSpartan-Light.ttf
+          weight: 100
+        - asset: assets/fonts/LeagueSpartan/LeagueSpartan-Medium.ttf
+          weight: 700
+        - asset: assets/fonts/LeagueSpartan/LeagueSpartan-Bold.ttf
+          weight: 800
+        - asset: assets/fonts/LeagueSpartan/LeagueSpartan-Black.ttf
+          weight: 900
