@@ -22,7 +22,7 @@ class CardImage extends ConsumerWidget {
         child: CachedNetworkImage(
           imageUrl: url!,
           fit: BoxFit.cover,
-          placeholder: (context, url) => CircularProgressIndicator(),
+          placeholder: (context, url) => const CircularProgressIndicator(),
           // cacheHeight: ,
           // cacheWidth: inf,
         ));

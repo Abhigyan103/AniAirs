@@ -52,7 +52,6 @@ ThemeData darkTheme = ThemeData.dark(
         fontSize: 11,
         fontFamily: _primaryFont,
         fontWeight: FontWeight.w100,
-        color: MyColors.black,
         height: 0.9),
   ),
   navigationDrawerTheme: const NavigationDrawerThemeData().copyWith(
@@ -79,7 +78,7 @@ ThemeData darkTheme = ThemeData.dark(
                 states.contains(MaterialState.hovered)) {
               return const Color.fromARGB(255, 96, 96, 96);
             }
-            return Color.fromARGB(255, 29, 29, 29);
+            return const Color.fromARGB(255, 29, 29, 29);
           }),
           elevation: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.pressed) ||

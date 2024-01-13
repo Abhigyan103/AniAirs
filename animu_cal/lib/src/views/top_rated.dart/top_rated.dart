@@ -1,10 +1,11 @@
 import 'package:animu_cal/src/core/utils/app_bar.dart';
-import 'package:animu_cal/src/features/top_rated.dart/controllers/top_rated_controller.dart';
 import 'package:animu_cal/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:jikan_api/jikan_api.dart';
+
+import 'controllers/top_rated_controller.dart';
 import '../../core/utils/card/widgets/card_grid.dart';
 import '../../core/utils/navigation_drawer/my_navigation_drawer.dart';
 
@@ -56,7 +57,7 @@ class TopRated extends ConsumerWidget {
                             child: Column(
                               children: [
                                 DropdownMenu(
-                                    label: Text('Filter'),
+                                    label: const Text('Filter'),
                                     width:
                                         MediaQuery.sizeOf(context).width - 32,
                                     onSelected: (value) {
@@ -73,14 +74,14 @@ class TopRated extends ConsumerWidget {
                                         return DropdownMenuEntry(
                                             value: e, label: item);
                                       }),
-                                      DropdownMenuEntry(
+                                      const DropdownMenuEntry(
                                           value: null, label: 'None')
                                     ]),
-                                SizedBox(
+                                const SizedBox(
                                   height: 16,
                                 ),
                                 DropdownMenu(
-                                    label: Text('Type'),
+                                    label: const Text('Type'),
                                     width:
                                         MediaQuery.sizeOf(context).width - 32,
                                     onSelected: (value) {
@@ -97,10 +98,10 @@ class TopRated extends ConsumerWidget {
                                         return DropdownMenuEntry(
                                             value: e, label: item);
                                       }),
-                                      DropdownMenuEntry(
+                                      const DropdownMenuEntry(
                                           value: null, label: 'None')
                                     ]),
-                                SizedBox(
+                                const SizedBox(
                                   height: 8,
                                 ),
                                 SizedBox(
@@ -120,7 +121,7 @@ class TopRated extends ConsumerWidget {
                             ),
                           ),
                         )
-                      : SizedBox()
+                      : const SizedBox()
                 ],
               ),
             ),
@@ -133,12 +134,12 @@ class TopRated extends ConsumerWidget {
             },
             error: (error, stackTrace) {
               print('Error : $error');
-              return SliverToBoxAdapter();
+              return const SliverToBoxAdapter();
               // return SizedBox();
             },
             loading: () {
               print('LOADING');
-              return SliverToBoxAdapter();
+              return const SliverToBoxAdapter();
               // return SizedBox();
             },
           )
