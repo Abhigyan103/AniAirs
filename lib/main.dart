@@ -1,4 +1,5 @@
 import 'package:animu_cal/src/views/get_started/get_started.dart';
+import 'package:animu_cal/src/views/login_signup/login.dart';
 import 'package:animu_cal/src/views/top_rated.dart/top_rated.dart';
 import 'package:animu_cal/theme.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       theme: darkTheme,
-      home: const GetStarted(),
+      home: const LoginPage(),
     );
   }
 }

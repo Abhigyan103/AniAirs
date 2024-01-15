@@ -7,8 +7,10 @@ class MyColors {
   static Color sandyBrown = const Color(0xFFF4A261);
   static Color black = const Color(0xFF000000);
   static Color shadowBlack = const Color(0x77000000);
+  static Color lightShadowBlack = const Color(0xFF131313);
   static Color shadowPersianGreen = const Color(0x77B7FFF6);
   static Color lightPersianGreen = const Color(0xFF58FCEC);
+  static Color lightMarineBlue = const Color(0xFF188EE9);
 }
 
 final List<Color> boxColors = [
