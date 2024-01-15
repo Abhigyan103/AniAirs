@@ -24,7 +24,6 @@ class SeasonalCalendar extends ConsumerWidget {
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          const MyAppBar(),
           CupertinoSliverRefreshControl(
             refreshTriggerPullDistance: 150,
             onRefresh: () async {},

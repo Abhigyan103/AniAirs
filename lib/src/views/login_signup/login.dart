@@ -1,4 +1,6 @@
+import 'package:animu_cal/src/core/utils/login_button/login_button.dart';
 import 'package:animu_cal/src/core/utils/text_fields/login_field.dart';
+import 'package:animu_cal/src/views/main_page/main_page.dart';
 import 'package:animu_cal/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,134 +12,142 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-               const Center(
-                  child: SizedBox(
-                    height: 109,
-                      width: double.infinity,
-                      child:
-                          Image(image: AssetImage("assets/logos/animu_logo.png")))),
-              const SizedBox(
-                height: 44,
-              ),
-              Center(
-                  child: Text(
-                "LOGIN",
-                style: Theme.of(context).textTheme.displayMedium,
-              )),
-              const SizedBox(
-                height: 22,
-              ),
-              const LoginField(
-                hintText: "Enter username",
-                prefixIcon: CupertinoIcons.profile_circled,
-              ),
-              const SizedBox(
-                height: 22,
-              ),
-              const LoginField(
-                hintText: "Enter Password",
-                prefixIcon: CupertinoIcons.lock_fill,
-                showPasswordSuffix: true,
-              ),
-              const SizedBox(
-                height: 44,
-              ),
-              Center(
-                  child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Forgot Password?',
-                        style: TextStyle(
+      body: SingleChildScrollView(
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 80),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Center(
+                    child: SizedBox(
+                        height: 109,
+                        width: double.infinity,
+                        child: Image(
+                            image: AssetImage("assets/logos/animu_logo.png")))),
+                const SizedBox(
+                  height: 44,
+                ),
+                Center(
+                    child: Text(
+                  "LOGIN",
+                  style: Theme.of(context).textTheme.displayMedium,
+                )),
+                const SizedBox(
+                  height: 22,
+                ),
+                const LoginField(
+                  hintText: "Enter username",
+                  prefixIcon: CupertinoIcons.profile_circled,
+                ),
+                const SizedBox(
+                  height: 22,
+                ),
+                const LoginField(
+                  hintText: "Enter Password",
+                  prefixIcon: CupertinoIcons.lock_fill,
+                  showPasswordSuffix: true,
+                ),
+                const SizedBox(
+                  height: 44,
+                ),
+                Center(
+                    child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            color: MyColors.lightMarineBlue,
+                            fontSize: 16,
+                            fontFamily: 'League Spartan',
+                            fontWeight: FontWeight.w400,
+                            height: 0,
+                          ),
+                        ))),
+                const SizedBox(
+                  height: 11,
+                ),
+                const Divider(),
+                const SizedBox(
+                  height: 11,
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    height: 69,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: MyColors.lightShadowBlack,
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.google,
                           color: MyColors.lightMarineBlue,
-                          fontSize: 16,
-                          fontFamily: 'League Spartan',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
                         ),
-                      ))),
-              const SizedBox(
-                height: 11,
-              ),
-              const Divider(),
-              const SizedBox(
-                height: 11,
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  height: 69,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: MyColors.lightShadowBlack,
-                      borderRadius: BorderRadius.circular(12)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FaIcon(
-                        FontAwesomeIcons.google,
-                        color: MyColors.lightMarineBlue,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Text(
-                        'Signup with Google',
-                        style: TextStyle(
-                          color: Color(0xFFBBBBBB),
-                          fontSize: 16,
-                          fontFamily: 'League Spartan',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
+                        const SizedBox(
+                          width: 10,
                         ),
-                      )
-                    ],
+                        const Text(
+                          'Signup with Google',
+                          style: TextStyle(
+                            color: Color(0xFFBBBBBB),
+                            fontSize: 16,
+                            fontFamily: 'League Spartan',
+                            fontWeight: FontWeight.w400,
+                            height: 0,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 22,
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  height: 69,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: MyColors.lightShadowBlack,
-                      borderRadius: BorderRadius.circular(12)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FaIcon(
-                        FontAwesomeIcons.facebook,
-                        color: MyColors.lightMarineBlue,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Text(
-                        'Signup with Facebook',
-                        style: TextStyle(
-                          color: Color(0xFFBBBBBB),
-                          fontSize: 16,
-                          fontFamily: 'League Spartan',
-                          fontWeight: FontWeight.w400,
-                          height: 0,
+                const SizedBox(
+                  height: 22,
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    height: 69,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: MyColors.lightShadowBlack,
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.facebook,
+                          color: MyColors.lightMarineBlue,
                         ),
-                      )
-                    ],
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const Text(
+                          'Signup with Facebook',
+                          style: TextStyle(
+                            color: Color(0xFFBBBBBB),
+                            fontSize: 16,
+                            fontFamily: 'League Spartan',
+                            fontWeight: FontWeight.w400,
+                            height: 0,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
-          )),
+              ],
+            )),
+      ),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.next_plan),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => MainPage()),
+            );
+          }),
     );
   }
 }
-
-

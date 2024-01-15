@@ -17,11 +17,9 @@ class TopRated extends ConsumerWidget {
     var animeListFuture = ref.watch(myTopAnimeFutureProvider);
     List<Anime> animeList = ref.watch(myTopAnimeProvider);
     return Scaffold(
-      drawer: const MyNavigationDrawer(),
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          const MyAppBar(),
           CupertinoSliverRefreshControl(
             refreshTriggerPullDistance: 150,
             onRefresh: () async {
