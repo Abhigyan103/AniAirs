@@ -1,3 +1,4 @@
+import 'package:animu_cal/src/views/top_rated.dart/top_rated.dart';
 import 'package:animu_cal/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,10 @@ class GetStarted extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => TopRated()));
+              },
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [

@@ -218,6 +218,7 @@ class CustomNavigationDrawerDestination extends StatelessWidget {
     required this.icon,
     this.selectedIcon,
     required this.label,
+    this.onTap,
   });
 
   /// Sets the color of the [Material] that holds all of the [Drawer]'s
@@ -253,6 +254,9 @@ class CustomNavigationDrawerDestination extends StatelessWidget {
   /// [NavigationDrawerThemeData.labelTextStyle]. If this are null, the default
   /// text style would use [TextTheme.labelLarge] with [ColorScheme.onSurfaceVariant].
   final Widget label;
+
+  /// Callback function when the destination is tapped
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -293,11 +297,14 @@ class CustomNavigationDrawerDestination extends StatelessWidget {
         final TextStyle? effectiveUnselectedLabelTextStyle =
             navigationDrawerTheme.labelTextStyle?.resolve(unselectedState) ??
                 defaults.labelTextStyle!.resolve(unselectedState);
-        return DefaultTextStyle(
-          style: _isForwardOrCompleted(animation)
-              ? effectiveSelectedLabelTextStyle!
-              : effectiveUnselectedLabelTextStyle!,
-          child: label,
+        return GestureDetector(
+          onTap: onTap,
+          child: DefaultTextStyle(
+            style: _isForwardOrCompleted(animation)
+                ? effectiveSelectedLabelTextStyle!
+                : effectiveUnselectedLabelTextStyle!,
+            child: label,
+          ),
         );
       },
     );
