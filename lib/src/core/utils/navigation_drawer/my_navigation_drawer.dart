@@ -57,43 +57,37 @@ class MyNavigationDrawer extends ConsumerWidget {
             height: 25,
           ),
           CustomNavigationDrawerDestination(
-              icon: Icon(
-                CupertinoIcons.star_fill,
-                color: MyColors.saffron,
-              ),
-              label: const Text('Top Rated'),
-              onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const TopRated()));
-              }),
+            icon: Icon(
+              CupertinoIcons.star_fill,
+              color: MyColors.saffron,
+            ),
+            label: const Text('Top Rated'),
+          ),
           CustomNavigationDrawerDestination(
-              icon: Icon(
-                CupertinoIcons.calendar,
-                color: MyColors.sandyBrown,
-              ),
-              label: const Text(
-                'Seasonal Calendar',
-                textHeightBehavior:
-                    TextHeightBehavior(applyHeightToLastDescent: false),
-              ),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const SeasonalCalendar()));
-              }),
+            icon: Icon(
+              CupertinoIcons.calendar,
+              color: MyColors.sandyBrown,
+            ),
+            label: const Text(
+              'Seasonal Calendar',
+              textHeightBehavior:
+                  TextHeightBehavior(applyHeightToLastDescent: false),
+            ),
+          ),
           CustomNavigationDrawerDestination(
-              icon: const Icon(
-                CupertinoIcons.heart_fill,
-                color: Colors.redAccent,
-              ),
-              label: const Text('Favourites'),
-              onTap: () {}),
+            icon: const Icon(
+              CupertinoIcons.heart_fill,
+              color: Colors.redAccent,
+            ),
+            label: const Text('Favourites'),
+          ),
           CustomNavigationDrawerDestination(
-              icon: Icon(
-                CupertinoIcons.calendar_today,
-                color: MyColors.persianGreen,
-              ),
-              label: const Text('Airing Today'),
-              onTap: () {}),
+            icon: Icon(
+              CupertinoIcons.calendar_today,
+              color: MyColors.persianGreen,
+            ),
+            label: const Text('Airing Today'),
+          ),
           Divider(
             height: 50,
             color: MyColors.persianGreen,
@@ -102,19 +96,19 @@ class MyNavigationDrawer extends ConsumerWidget {
             endIndent: 12,
           ),
           CustomNavigationDrawerDestination(
-              icon: const Icon(
-                CupertinoIcons.settings_solid,
-                color: Colors.grey,
-              ),
-              label: const Text('Settings'),
-              onTap: () {}),
+            icon: const Icon(
+              CupertinoIcons.settings_solid,
+              color: Colors.grey,
+            ),
+            label: const Text('Settings'),
+          ),
           CustomNavigationDrawerDestination(
-              icon: const Icon(
-                CupertinoIcons.person_3_fill,
-                color: Colors.grey,
-              ),
-              label: const Text('About'),
-              onTap: () {}),
+            icon: const Icon(
+              CupertinoIcons.person_3_fill,
+              color: Colors.grey,
+            ),
+            label: const Text('About'),
+          ),
         ]);
   }
 }
