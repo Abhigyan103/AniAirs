@@ -121,7 +121,7 @@ class LoginPage extends StatelessWidget {
                         width: 10,
                       ),
                       const Text(
-                        'Signup with Google',
+                        'Signup with Facebook',
                         style: TextStyle(
                           color: Color(0xFFBBBBBB),
                           fontSize: 16,
