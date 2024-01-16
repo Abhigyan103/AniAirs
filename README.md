@@ -1,9 +1,5 @@
-# ANIMU
-<div align="center">
+# AniAirs
 
-![gdg](https://github.com/Abhigyan103/AniAirs/blob/main/assets/logos/animu_logo.png)
-
-</div>
 
 <!-------------------------------------------------------------------------------------------------------------------------------------->
  <div align="center">
