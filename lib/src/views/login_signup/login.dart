@@ -1,7 +1,7 @@
-import 'package:animu_cal/src/core/utils/login_button/login_button.dart';
-import 'package:animu_cal/src/core/utils/text_fields/login_field.dart';
-import 'package:animu_cal/src/views/main_page/main_page.dart';
-import 'package:animu_cal/theme.dart';
+import 'package:AniAirs/src/core/utils/login_button/login_button.dart';
+import 'package:AniAirs/src/core/utils/text_fields/login_field.dart';
+import 'package:AniAirs/src/views/main_page/main_page.dart';
+import 'package:AniAirs/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

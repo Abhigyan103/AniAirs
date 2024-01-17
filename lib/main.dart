@@ -1,8 +1,8 @@
-import 'package:animu_cal/src/views/get_started/get_started.dart';
-import 'package:animu_cal/src/views/login_signup/login.dart';
-import 'package:animu_cal/src/views/main_page/main_page.dart';
-import 'package:animu_cal/src/views/top_rated.dart/top_rated.dart';
-import 'package:animu_cal/theme.dart';
+import 'package:AniAirs/src/views/get_started/get_started.dart';
+import 'package:AniAirs/src/views/login_signup/login.dart';
+import 'package:AniAirs/src/views/main_page/main_page.dart';
+import 'package:AniAirs/src/views/top_rated.dart/top_rated.dart';
+import 'package:AniAirs/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

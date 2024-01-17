@@ -1,12 +1,12 @@
-import 'package:animu_cal/src/core/utils/app_bar.dart';
-import 'package:animu_cal/src/core/utils/card/widgets/card_grid.dart';
-import 'package:animu_cal/src/core/utils/navigation_drawer/my_navigation_drawer.dart';
-import 'package:animu_cal/src/views/seasonal_calendar/controller/seasonal_calendar_controller.dart';
+import 'package:AniAirs/src/core/utils/app_bar.dart';
+import 'package:AniAirs/src/core/utils/card/widgets/card_grid.dart';
+import 'package:AniAirs/src/core/utils/navigation_drawer/my_navigation_drawer.dart';
+import 'package:AniAirs/src/views/seasonal_calendar/controller/seasonal_calendar_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:jikan_api/jikan_api.dart';
-import 'package:animu_cal/theme.dart';
+import 'package:AniAirs/theme.dart';
 
 class SeasonalCalendar extends ConsumerWidget {
   const SeasonalCalendar({super.key});
