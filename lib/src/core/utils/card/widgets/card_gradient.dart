@@ -9,10 +9,7 @@ class CardGradient extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     List<Color> colors = [
       Colors.transparent,
-      Colors.transparent,
-      Colors.transparent,
-      const Color(0xD8E9C46A),
-      const Color(0xD8E9C46A)
+      Colors.black,
     ];
     // if (!isAiring) {
     //   colors = [

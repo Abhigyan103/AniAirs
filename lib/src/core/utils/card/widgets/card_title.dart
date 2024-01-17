@@ -10,8 +10,9 @@ class CardTitle extends ConsumerWidget {
     return Text(
       title,
       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+        color: Colors.white,
             height: 1.25,
-            fontWeight: FontWeight.w800,
+            fontWeight: FontWeight.bold,
           ),
       textAlign: TextAlign.center,
       maxLines: 2,
