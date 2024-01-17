@@ -1,5 +1,5 @@
-import 'package:animu_cal/src/views/top_rated.dart/top_rated.dart';
-import 'package:animu_cal/theme.dart';
+import 'package:AniAirs/src/views/top_rated.dart/top_rated.dart';
+import 'package:AniAirs/theme.dart';
 import 'package:flutter/material.dart';
 
 class GetStarted extends StatelessWidget {

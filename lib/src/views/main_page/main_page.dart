@@ -1,7 +1,7 @@
-import 'package:animu_cal/src/views/not_implemented/not_implemented.dart';
-import 'package:animu_cal/src/views/seasonal_calendar/seasonal_calendar.dart';
-import 'package:animu_cal/src/views/top_rated.dart/top_rated.dart';
-import 'package:animu_cal/theme.dart';
+import 'package:AniAirs/src/views/not_implemented/not_implemented.dart';
+import 'package:AniAirs/src/views/seasonal_calendar/seasonal_calendar.dart';
+import 'package:AniAirs/src/views/top_rated.dart/top_rated.dart';
+import 'package:AniAirs/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

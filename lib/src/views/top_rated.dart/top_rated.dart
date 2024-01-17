@@ -1,5 +1,5 @@
-import 'package:animu_cal/src/core/utils/app_bar.dart';
-import 'package:animu_cal/theme.dart';
+import 'package:AniAirs/src/core/utils/app_bar.dart';
+import 'package:AniAirs/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
