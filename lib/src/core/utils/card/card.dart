@@ -14,7 +14,9 @@ import 'widgets/card_title.dart';
 
 class MyCard extends ConsumerWidget {
   const MyCard({super.key, required this.anime});
+
   final Anime anime;
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return GestureDetector(
@@ -55,7 +57,7 @@ class MyCard extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 CardTitle(title: anime.title),

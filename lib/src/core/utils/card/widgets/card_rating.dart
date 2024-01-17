@@ -8,16 +8,16 @@ class CardRating extends ConsumerWidget {
   const CardRating({super.key, this.rating, required this.isAiring});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Color backColor = MyColors.persianGreen;
+    Color backColor = Colors.black54;
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: (rating == null)
           ? const SizedBox()
           : Container(
               height: 25,
               width: 50,
               decoration: BoxDecoration(
-                color: isAiring ? backColor.withAlpha(190) : backColor,
+                color: backColor,
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Center(
@@ -25,19 +25,20 @@ class CardRating extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      rating.toString(),
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                          fontSize: 10,
-                          color: (isAiring) ? Colors.black : Colors.white),
-                      textHeightBehavior: const TextHeightBehavior(
-                          applyHeightToLastDescent: false),
-                    ),
                     Icon(
                       Icons.star,
                       size: 15,
                       color: MyColors.saffron,
-                    )
+                    ),
+                    Text(
+                      rating.toString(),
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          fontSize: 10,
+                          color: Colors.white),
+                      textHeightBehavior: const TextHeightBehavior(
+                          applyHeightToLastDescent: false),
+                    ),
+
                   ],
                 ),
               ),

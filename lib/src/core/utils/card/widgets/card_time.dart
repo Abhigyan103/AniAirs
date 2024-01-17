@@ -14,7 +14,7 @@ class CardTime extends ConsumerWidget {
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium!
-                .copyWith(fontSize: 11, fontWeight: FontWeight.w500),
+                .copyWith(fontSize: 11, fontWeight: FontWeight.w500, color: Colors.white),
           )
         : const SizedBox();
   }
