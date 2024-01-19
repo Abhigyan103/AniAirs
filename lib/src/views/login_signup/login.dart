@@ -48,7 +48,27 @@ class LoginPage extends StatelessWidget {
                   showPasswordSuffix: true,
                 ),
                 const SizedBox(
-                  height: 44,
+                  height: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left:7),
+                  child: SizedBox(
+                    width:MediaQuery.of(context).size.width/1.1,
+                    child: ElevatedButton(onPressed:(){},
+                        style:ElevatedButton.styleFrom(
+                          padding: EdgeInsets.all(16),
+                         backgroundColor: MyColors.lightMarineBlue,
+                         shape: RoundedRectangleBorder(
+                           borderRadius:  BorderRadius.circular(11),
+                         )
+                        ),
+                        child:Text('Login',style: TextStyle(
+                            fontFamily: 'League Spartan',
+                          fontSize: 30
+                        ),)
+
+                    ),
+                  ),
                 ),
                 Center(
                     child: TextButton(
