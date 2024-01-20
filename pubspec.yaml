@@ -19,6 +19,25 @@ dependencies:
   riverpod_annotation: ^2.3.1
   neon_widgets: ^2.0.0
   font_awesome_flutter: ^10.6.0
+  flutter_native_splash: ^2.3.9
+
+# flutter_native_splash-development.yaml
+flutter_native_splash:
+  color: "#0f0d0d"
+  image: "assets/logos/animu_logo.png"
+  branding: "assets/logos/animu_logo.png"
+  color_dark: "##0f0d0d"
+  image_dark: "assets/logos/animu_logo.png"
+  branding_dark: "assets/logos/animu_logo.png"
+
+  android_12:
+    image: "assets/logos/animu_logo.png"
+    icon_background_color: "#0f0d0d"
+    image_dark: "assets/logos/animu_logo.png"
+    icon_background_color_dark: "#0f0d0d"
+
+  web: false
+
 
 dev_dependencies:
   flutter_test:
