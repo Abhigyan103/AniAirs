@@ -1,5 +1,6 @@
 import 'package:AniAirs/src/core/utils/login_button/login_button.dart';
 import 'package:AniAirs/src/core/utils/text_fields/login_field.dart';
+import 'package:AniAirs/src/views/login_signup/signup.dart';
 import 'package:AniAirs/src/views/main_page/main_page.dart';
 import 'package:AniAirs/theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -83,10 +84,48 @@ class LoginPage extends StatelessWidget {
                             height: 0,
                           ),
                         ))),
-                const SizedBox(
-                  height: 11,
-                ),
                 const Divider(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Don't have an account?",style: TextStyle(color: Color(0xFFBBBBBB),
+                  fontSize: 16,
+                  fontFamily: 'League Spartan',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => Signup()),
+                          );
+
+                        },
+                        child: Text(
+                          "Signup",
+                          style: TextStyle(
+                            color: MyColors.lightMarineBlue,
+                            fontSize: 16,
+                            fontFamily: 'League Spartan',
+                            fontWeight: FontWeight.w400,
+                            height: 0,
+                          ),
+                        )),
+
+                  ],
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Center(
+                  child: Text("OR",style: TextStyle(color: Color(0xFFBBBBBB),
+                    fontSize: 20,
+                    fontFamily: 'League Spartan',
+                    fontWeight: FontWeight.w400,
+                    height: 0,
+                  ),),
+                ),
                 const SizedBox(
                   height: 11,
                 ),
